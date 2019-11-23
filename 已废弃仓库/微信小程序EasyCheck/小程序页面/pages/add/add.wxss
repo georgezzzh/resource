@@ -1,0 +1,55 @@
+/*页面首部信息*/
+.head{
+background-color:#0cf;
+color:white;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+/*选中和未选中的类*/
+.selected{
+  color:white;
+  font-size:20px;
+}
+.unselected{
+  color:#eee;
+  font-size:18px;
+}
+
+/*头部贴纸*/
+.headTitle{
+  font-size: 20px;
+  height: 60px;
+  line-height: 60px;
+}
+
+/*支出收入贴纸*/
+.income_expense>text:first-child{
+  position: relative;
+  margin-left:50rpx;
+  height:60px;
+  line-height:60px;
+}
+.income_expense>text:nth-child(2){
+  position: relative;
+  margin-left: 500rpx;
+  height:60px;
+  line-height:60px;
+}
+
+/*主要表单*/
+.container_customer{
+  padding-top:20px;
+  padding-bottom:5px;
+}
+.submitBtn{
+  background-color:#0cf;
+  width:60%;
+  height: 70rpx;
+  line-height: 70rpx;
+  position: relative;
+  margin-top: 60rpx;
+}

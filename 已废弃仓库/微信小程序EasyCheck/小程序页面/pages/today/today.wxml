@@ -1,0 +1,58 @@
+<view class="main container">
+
+<view class="abstractContainer">
+    <view class="weui-cells abs-cell">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">共计{{sumObj.totalCount}}笔交易</view>
+        </view>
+    </view>
+    <!--今日交易信息-->
+      <view class="weui-cells abs-cell">
+          <view class="weui-cell">
+              <view class="weui-cell__bd"><text>总支出</text></view>
+              <view class="weui-cell__ft">
+                    <text>{{sumObj.expenseSum}}</text>
+              </view>
+          </view>
+      </view>
+      <!--总收入-->
+    <view class="weui-cells abs-cell">
+        <view class="weui-cell">
+            <view class="weui-cell__bd"><text>总收入</text></view>
+            <view class="weui-cell__ft">
+                  <text>{{sumObj.incomeSum}}</text>
+            </view>
+        </view>
+    </view>
+    <!--结余-->
+    <view class="weui-cells abs-cell">
+        <view class="weui-cell">
+            <view class="weui-cell__bd"><text>结余</text></view>
+            <view class="weui-cell__ft">
+                  <text>{{sumObj.totalSum}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<!--abstractContainer end-->
+    <view class="detailContainer" wx:for="{{obj}}" wx:for-item="bigItem">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd checkTimeTitle">{{index}}</view>
+            </view>
+        </view>
+        <view class="weui-cells" wx:for="{{bigItem}}" id="{{item.deal_id}}" bindtap='checkoutDetail'>
+            <view class="weui-cell">
+                  <view class="weui-cell__bd">
+                        <text>{{item.category}}  </text><text style="font-size:14pxs;color:#999;">{{item.remark}}</text>
+                        <view class="detail_info">{{item.expense}}</view>
+                  </view>
+                  <view class="weui-cell__ft">
+                      <text>{{item.amount}}</text>
+                      <view class="detail_info">{{item.create_time}}</view>
+                  </view>
+            </view>
+        </view>
+    </view>
+    <!--detail container end--->
+</view>

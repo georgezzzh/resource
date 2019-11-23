@@ -1,0 +1,95 @@
+<view class="main container">
+
+    <view class="todayTransaction">
+        <!--今日交易-->
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                今日交易
+                </view>
+            </view>
+        </view>
+        <!--今日交易信息-->
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                      <text>{{today.category}}</text>
+                      <view class="detail_info">{{today.expense}}</view>
+                      </view>
+                  <view class="weui-cell__ft">
+                      <text>{{today.amount}}</text>
+                      <view class="detail_info">{{today.create_time}}</view>
+                  </view>
+            </view>
+        </view>
+        <!--所有交易block-->
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd" bindtap='navToToday'>
+                所有交易
+                </view>
+            </view>
+        </view>
+
+</view>
+<!--首页第二模块，收入支出统计-->
+<view class="income_outcome">
+        <!--收入支出Block-->
+       <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                收入支出
+                </view>
+            </view>
+        </view>
+        <!--今天-->
+          <view class="weui-cells" bindtap='navToToday'>
+            <view class="weui-cell">
+                   <view class="weui-cell__bd">
+                      <text>今天</text>
+                      <view class="detail_info">{{calender.today}}</view>
+                  </view>
+                  <view class="weui-cell__ft">
+                      <text >{{dayMonthYearData.day}}</text>
+                  </view>
+            </view>
+        </view>
+        <!--本周-->
+            <view class="weui-cells" bindtap='navToWeek'>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                      <text>本周</text>
+                      <view class="detail_info">{{calender.firstDayOfWeek}}-{{calender.lastDayOfWeek}}</view>
+                      </view>
+                  <view class="weui-cell__ft">
+                      <text>{{dayMonthYearData.week}}</text>
+                  </view>
+            </view>
+        </view>
+        <!--本月-->
+            <view class="weui-cells" bindtap='navToMonth'>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                      <text>本月</text>
+                      <view class="detail_info">{{calender.firstDayOfMonth}}-{{calender.lastDayOfMonth}}</view>
+                      </view>
+                  <view class="weui-cell__ft">
+                      <text>{{dayMonthYearData.month}}</text>
+                  </view>
+            </view>
+        </view>
+        <!--本年-->
+           <view class="weui-cells" bindtap='navToYear'>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                      <text>本年</text>
+                      <view class="detail_info">{{calender.firstDayOfYear}}-{{calender.lastDayOfYear}}</view>
+                </view>
+                <view class="weui-cell__ft">
+                    <text>{{dayMonthYearData.year}}</text>
+                </view>
+            </view>
+        </view>
+        <!--统计模块结束-->
+</view>
+</view>

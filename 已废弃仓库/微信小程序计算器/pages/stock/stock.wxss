@@ -1,0 +1,12 @@
+/* pages/stock/stock.wxss */
+view{
+color: red;
+background-color: greenyellow;
+}
+view text{
+  width: 300rpx;
+  float: left;
+}
+text:first-child{
+  color: black;
+}

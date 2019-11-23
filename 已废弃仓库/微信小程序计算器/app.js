@@ -1,0 +1,14 @@
+//app.js
+App({
+ onLaunch:function(){
+   //初始化
+ },
+ onShow:function(){
+   //显示启动
+ },
+ onHide:function(){
+   //隐藏时
+ },
+ globalFunction:"全局函数",
+ globalData:"全局属性"
+})

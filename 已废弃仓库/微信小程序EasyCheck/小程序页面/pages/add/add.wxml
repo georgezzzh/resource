@@ -1,0 +1,89 @@
+<view class="page" bindtouchstart='touchstart' bindtouchmove='touchmove'bindtouchend='touchend'>
+<!--head模块-->
+
+<view class="head">
+<view style="text-align:center" class="headTitle">添加交易</view>
+<view class="income_expense touch">
+<text class="{{expense?'selected':'unselected'}}">支出</text><text class="{{expense?'unselected':'selected'}}">收入</text>
+</view>
+</view>
+
+<!--整个表单-->
+<!--class="container container_customer"-->
+<view class="">
+<form class="form1" method="post" action="#" bindsubmit='submitForm'>
+<!--日期-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>日期</text>
+        </view>
+          <view class="weui-cell__ft">
+         <picker mode="date" id="date" name="date" bindchange='dateChange' value="{{formData.date}}">
+         <view>{{formData.date}}</view>
+          </picker>
+          </view>
+    </view>
+</view>
+<!--金额信息-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>金额</text>
+              </view>
+          <view class="weui-cell__ft">
+              <input type="digit" placeholder="" name="amount" value="{{formData.amount}}"/>
+          </view>
+    </view>
+</view>
+<!--分类-->
+<view class="{{expense?'weui-cells':'hidden'}}">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>分类</text>
+          </view>
+          <view class="weui-cell__ft">
+            <!--
+            <picker mode="selector" bindchange='change' value="{{selectIndex}}" range="{{array}}" name="selectIndex">
+            <view class="picker">{{array[selectIndex]}}</view>
+            </picker>
+            -->
+            <!--
+              <radio-group class="radio-group" bindchange="radioChange">
+              <label class="radio" wx:key="{{name}}"  wx:for="{{items}}">
+              <view class="tui-menu-list"><radio color="#007aff" value="{{item.name}}" checked="{{item.checked}}"/>
+                    {{item.value}}</view>
+              </label>
+              </radio-group>
+              -->
+              <radio-group bindchange="radioChange">
+              <radio value='other'>其他</radio>
+              <radio value='food' checked>吃饭</radio>
+              <radio value='cola' >饮料</radio>
+              <radio value='book'>图书</radio>
+              <text>\n</text>
+              <radio value='shop'>购物</radio>
+              <radio value='traffic'>交通</radio>
+              <radio value="entertainment">娱乐</radio>
+            </radio-group>
+          </view>
+    </view>
+</view>
+
+
+<!--备注-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>备注</text>
+              </view>
+          <view class="weui-cell__ft">
+              <input class="text" placeholder="" name="otherInfo"  value="{{formData.otherInfo}}"/>
+          </view>
+    </view>
+</view>
+<!--提交表单-->
+<button class="submitBtn" form-type="submit">保存</button>
+</form>
+</view>
+</view>

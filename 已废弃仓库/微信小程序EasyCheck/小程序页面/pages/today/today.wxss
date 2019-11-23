@@ -1,0 +1,37 @@
+/* pages/today/today.wxss */
+page{
+  background-color:#eee;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+.container{
+  padding: 0px;
+}
+.weui-cells{
+  margin-top:-1rpx;
+}
+.abs-cell{
+  height:100rpx;
+}
+.abstractContainer,.detailContainer{
+  padding:0;
+  background: white;
+  width:750rpx;
+}
+.detailContainer{
+  margin-top:6px;
+}
+/*
+修改时间的样式
+*/
+.checkTimeTitle{
+  color:#0cf;
+  font-size:18px;
+}
+/*小的提示文字detail info*/
+.detail_info{
+  color:gray;
+  font-size:14px;
+  font-weight: 300;
+}

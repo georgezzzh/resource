@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> 图像加密  </title>
+<style>
+	.div1,.div2{
+				float:left;
+				width :256px;
+				height:256px;
+				margin:20px;}
+		.div1{
+			  position:relative;
+			  left:20px;
+			  border:1px dashed #000000}
+		.div2{
+			  position:relative;
+			  left:20px;
+			  border:1px dashed #000000}
+</style>
+<script>
+function OpenPic()
+{document.getElementById("button").click();}
+</script>
+</head>
+
+<body>
+<h1> 图像加密 </h1>
+<form action="https://www.xxx.com" method="get">
+<table width="350"  border="1" align="left" cellpadding="0" cellspacing="0">
+	<tr><th> 参数 </th>
+	    <th> 数值  </th>
+	</tr>
+	<tr><td width="175" align="center" valign="middle"> 噪声 </td>
+	    <td width="175">    </td>
+	</tr>
+	<tr><td align="center" valign="middle"> 图片 </td>
+		<td >
+		<form id="firstForm" enctype="multipart/form-data" method="post" action="{% url 'url-encode_picture'%}">
+		<input type="file" class="btn btn-info" id="pictureFile" name="picture" style="margin-left:65px">  
+		<button type="submit" class="btn btn-default" style="margin-left:65px">上传</button><br/>
+		</form> 
+<script>
+console.log('encode app . js');
+var btn = document.getElementById("firstForm");
+var encode_request = new XMLHttpRequest();
+btn.addEventListener("submit", function (event) {
+    console.log("trigger submit event");
+    //prevent default form submit event
+    event.preventDefault();
+    //formData formatting
+    var formData = new FormData();
+    var file = document.getElementById("pictureFile").files[0];
+    formData.append("img", file)
+    //send ajax request to django
+    encode_request.open("POST", "http://localhost:8000/encode/encode_picture", true);
+    encode_request.timeout = 10000;
+    encode_request.send(formData);
+});
+
+//bond ajax response event
+encode_request.onreadystatechange = function () {
+    if (encode_request.readyState == 4) {
+        try {
+            if ((encode_request.status >= 200 && encode_request.status < 300) || encode_request.status == 304) {
+                console.log(encode_request.responseText);
+                var info = JSON.parse(encode_request.responseText)
+                //encode_url & decode_url of picture
+                var decode_url = info.url_picture.decode;
+                var encode_url = info.url_picture.encode;
+                console.log("解密图片: " + decode_url);
+                console.log("加密图片: " + encode_url);
+                //encode img in placeholder_encode
+                var placeholder_encode = document.getElementById("encode_after");
+                placeholder_encode.innerHTML = "";
+                var img_encode = document.createElement("img");
+                img_encode.src = encode_url;
+                placeholder_encode.appendChild(img_encode);    
+                //decode img in placehold_decode
+                var placeholder_decode = document.getElementById("decode_after");
+                placeholder_decode.innerHTML = ""
+                var img_decode = document.createElement("img")
+                img_decode.src = decode_url;
+                placeholder_decode.appendChild(img_decode);
+
+                
+            } else {
+                console.log("request was unsuccessful " + encode_request.status);
+            }
+        } catch (ex) {
+            //progress by ontimeout event function
+        }
+    }
+}
+
+encode_request.ontimeout = function () {
+    console.log("request did not return in a second");
+};
+</script>
+			<!--<form  action="demo_form.asp">
+			<input type="file"  onclick="OpenPic" style="margin-left:65px" class="upload-input" >		
+			<button class="upload-btn">选择文件</button>
+			</form>-->
+		</td>
+	</tr>
+</table>
+<center>
+<div class="div1">加密图像</div>
+<div class="div2">解密图像</div>
+</center>
+<!--<img src="file:///C|/Users/19635/Documents/Tencent Files/1963552419/FileRecv/1.bmp" alt="1.bmp" height="512" width="512">-->
+ <img src="" id="img"/>
+<script>
+    ws = new WebSocket("ws://192.168.0.171:1235");
+    ws.onopen = function () {
+        alert("连接成功");
+        ws.send('tom');
+        alert("给服务端发送一个字符串：tom");
+    }
+    ws.onmessage = function (e) {
+        document.getElementById('img').src = 'data:image/gif;'+e.data;
+    }
+</script>
+
+         
+</body>      
+</html> 
+
+

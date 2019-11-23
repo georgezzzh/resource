@@ -1,0 +1,7 @@
+/* pages/checkoutDetail/checkoutDetail.wxss */
+.form1{
+  width:80%;
+}
+.submitBtn{
+  margin-top:20px;
+}

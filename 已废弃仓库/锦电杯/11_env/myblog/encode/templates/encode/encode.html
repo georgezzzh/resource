@@ -1,0 +1,162 @@
+﻿<!--encode.html-->
+{%extends 'encode/base.html'%}
+
+{% block title %}encode page{% endblock %}
+
+{% block content %}
+<style>
+    #pictureFile {
+        display: none;
+    }
+
+    .container {
+        position: relative;
+        left: 200px;
+    }
+
+    .upload {
+        position: relative;
+        left: 40px;
+    }
+
+    #preview {
+        display: none;
+        height: 400px;
+    }
+
+    #preview_id:hover .mask {
+        display: block;
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        background: rgba(255, 204, 204,0.3);
+        color: black;
+        font-size: larger;
+    }
+
+    .mask {
+        position: absolute;
+        top: 100px;
+        /*left: 200px;*/
+        left: 20%;
+        display: none;
+    }
+
+    .maskText {
+        margin: 0 auto;
+        vertical-align: central;
+    }
+    #placeholder{
+        position:relative;
+        top:50px;
+    }
+    #psnr {
+        position: relative;
+        left: 600px;
+        font-size: 20px;
+        display:none;
+    }
+    #encode_after{
+        position:relative;
+        left:200px;
+    }
+    #decode_after{
+        position:relative;
+        left:400px;
+    }
+    .bigPicture:hover .mask_bigPic{
+        display: inline;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        background: rgba(255, 204, 204,0.3);
+        color: black;
+        font-size: larger;
+    }
+    .bigPicture1:hover .mask_bigPic1 {
+        display: inline;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        background: rgba(255, 204, 204,0.3);
+        color: black;
+        font-size: larger;
+    }
+    .mask_bigPic {
+        position: absolute;
+        top: 20px;
+        left: 230px;
+        display: none;
+    }
+    .mask_bigPic1 {
+        position: absolute;
+        top: 20px;
+        left: 630px;
+        display: none;
+    }
+
+</style>
+<div class="container">
+
+    <div id="preview_id">
+        <img src="" id="preview" />
+        <div class="mask"><div class="maskText">Preview Picture</div></div>
+    </div>
+    <form method="post" action="{% url 'url-encode_picture'%}" id="firstForm" enctype="multipart/form-data" class="form-horizontal" role="form">
+        <div class="file_upload">
+            <input type="file" class="btn" id="pictureFile" name="picture" />
+            <span for="pictureFile" id="File1"><img src="\static\encode\images\upload.svg" width="50" /></span>
+        </div>
+        <div class="container-1">
+
+            <div class="form-group">
+                <label for="noise">噪声系数</label>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="noise" min="0" max="0.5" step="0.01" name="noise" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="salt_noise">丢包系数</label>
+                <div class="col-sm-2">
+                    <input type="number" id="salt_noise" class="form-control" min="0" max="1" step="0.01" name="salt_noise" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="change_factor">像素点调整系数</label>
+                <div class="col-sm-2">
+                    <input type="number" id="change_factor" class="form-control" min="0.1" max="1.0" step="0.01" name="change_factor" />
+                </div>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary upload">上传</button><br />
+    </form>
+</div>
+<hr />
+<div id="placeholder">
+    <span class="bigPicture">
+        <img id="encode_after" width="200" />
+        <span class="mask_bigPic"><span>Click for larger Picture</span></span>
+    </span>
+    <span class="bigPicture1">
+        <img id="decode_after" width="200" />
+        <span class="mask_bigPic1"><span>Click for larger Picture</span></span>
+    </span>
+    <span class="label label-info" id="psnr">NULL</span>
+
+</div>
+<input type="hidden" id="refreshed" value="no">
+
+<script>
+    document.getElementById("File1").addEventListener("click", function () {
+        document.getElementById("pictureFile").click();
+        document.getElementById("encode_after").style.display = 'none';
+        document.getElementById("decode_after").style.display = 'none';
+        // document.getElementById("container").style.display = 'block';
+    });
+
+</script>
+<script src="\static\encode\js\encode.js"></script>
+<script src="\static\encode\js\page_control.js"></script>
+{% endblock %}

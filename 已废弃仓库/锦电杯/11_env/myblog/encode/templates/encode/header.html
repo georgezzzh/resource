@@ -1,0 +1,24 @@
+﻿<!--header.html-->
+<html lang="zh-cn">
+<style>
+
+</style>
+<body>
+
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header" align="center">
+                {% block menu%}
+                {% endblock %}
+            </div>
+            <div>
+                <ul class="nav navbar-nav" id="menu_touch">
+                    <li class="active"><a href="{% url 'url-encode'%}">Picture Encode</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
