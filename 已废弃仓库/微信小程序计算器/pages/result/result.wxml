@@ -1,0 +1,5 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+<view>计算完整版</view>
+<textarea value="{{info}}"></textarea>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTextStyle":"black",
+  "navigationBarTitleText":"Calculator",
+  "backgroundColor":"#213",
+  "backgroundTextStyle":"light"
+}

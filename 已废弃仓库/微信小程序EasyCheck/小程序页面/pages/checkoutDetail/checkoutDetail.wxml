@@ -1,0 +1,64 @@
+<!--pages/checkoutDetail/checkoutDetail.wxml-->
+
+
+<!--整个表单-->
+<view class="container container_customer">
+<view>详情</view>
+<form class="form1" method="GET" action="#" bindsubmit='submitForm'>
+<!--日期-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>日期</text>
+        </view>
+          <view class="weui-cell__ft">{{obj.bill_date}}
+          </view>
+    </view>
+</view>
+<!--日期-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>创建时间</text>
+        </view>
+          <view class="weui-cell__ft">{{obj.create_time}}
+          </view>
+    </view>
+</view>
+<!--金额信息-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>金额</text>
+              </view>
+          <view class="weui-cell__ft">
+             {{obj.amount}}
+          </view>
+    </view>
+</view>
+<!--分类-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>分类</text>
+          </view>
+          <view class="weui-cell__ft">
+            {{obj.category}}
+          </view>
+    </view>
+</view>
+<!--备注-->
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+              <text>备注</text>
+              </view>
+          <view class="weui-cell__ft">
+             {{obj.remark}}
+          </view>
+    </view>
+</view>
+<!--提交表单-->
+<button class="submitBtn" type="warn" form-type="submit">删除</button>
+</form>
+</view>

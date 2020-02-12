@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText":"Daily",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#0cf"
+}

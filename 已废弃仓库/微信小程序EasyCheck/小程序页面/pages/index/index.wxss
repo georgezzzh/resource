@@ -1,0 +1,76 @@
+page{
+  background-color:#eee;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+.container{
+  padding:0px;
+}
+.todayTransaction{
+  width:750rpx;
+}
+.todayTransaction>view:first-child{
+  margin:0px;
+  margin-top:-1px;
+  padding: 0px;
+  border: 0px;
+}
+.todayTransaction>view:nth-child(2){
+  position: relative;
+  top:-1px;
+  margin:0px;
+}
+.todayTransaction>view:nth-child(3){
+  position: relative;
+  top:-2px;
+  margin:0px;
+  color:#0cf;
+}
+
+/*income&outCome block*/
+.income_outcome{
+  width:750rpx;
+}
+
+.income_outcome>view{
+  margin:0px;
+  /*
+  margin-left: 5px;
+  margin-right:5px;
+  */
+}
+
+.income_outcome>view:first-child{
+  margin-top:20rpx;
+}
+.income_outcome>view:nth-child(2){
+  position: relative;
+  top:-1px;
+}
+.income_outcome>view:nth-child(3){
+  position: relative;
+  top:-2px;
+}
+
+.income_outcome>view:nth-child(4){
+  position: relative;
+  top:-3px;
+}
+.income_outcome>view:nth-child(5){
+  position: relative;
+  top:-5px;
+}
+/*detail infp*/
+.detail_info{
+  color:gray;
+  font-size:14px;
+  font-weight: 300;
+}
+/*amountInvalid & amountValid*/
+.amountValid{
+  display: inline;
+}
+.amountinValid{
+  display: none;
+}

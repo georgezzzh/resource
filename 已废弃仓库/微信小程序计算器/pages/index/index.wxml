@@ -1,0 +1,126 @@
+<!--index.wxml-->
+<view class="showArea">
+<view type="text" class="totalInput"><text style="position:relative;">{{totalInput}}</text></view>
+<view><text class="tips" id="bin"  bindtap='programMode'>Bin  </text><text id="bin" bindtap="fulldisplay">{{bin_str}}</text></view>
+<view><text class="tips" bindtap='programMode' id="hex">Hex  </text><text id="hex" bindtap='fulldisplay'>{{hex_str}}</text></view>
+<view><text class="tips" id="dec"  bindtap='programMode'>Dec  </text><text id="ans" bindtap='fulldisplay'>{{answer}}</text></view>
+</view>
+
+
+<view class="number" bindtap='cal'>
+<!--二进制-->
+<view style="{{binStyle}}">
+  <view class="SevenEightNine">
+  <text id="0">0</text>
+  <text id="1">1</text>
+  <text id="&">&</text>
+  <text id="|">|</text>
+  </view>
+  <view class="SevenEightNine">
+  <text id="^">xor</text>
+  <text id="!">!</text>
+  <text id="+">+</text>
+  <text id="-">-</text>
+  </view>
+  <view class="SevenEightNine">
+  <text id="×">×</text>
+  <text id="÷">÷</text>
+  <text id="(">(</text>
+  <text id=")">)</text>
+  </view>
+  <view class="SevenEightNine">
+  <text id="del">{{lt}}</text>
+  <text id="clear">Ac</text>
+  </view>
+</view>
+<!--16进制-->
+<view class="programer" style="{{hexStyle}}">
+  <view class="SevenEightNine">
+    <text id="&">&</text>
+    <text id="|">|</text>
+    <text id="!">!</text>
+    <text id="^">xor</text>
+  </view>
+  <view class="SevenEightNine">
+    <text id="f">f</text>
+    <text id="e">e</text>
+    <text id="g">d</text>
+      <text id="÷">÷</text>
+  </view>
+  <view class="SevenEightNine">
+    <text id="c">c</text>
+    <text id="b">b</text>
+    <text id="a">a</text>
+      <text id="×">×</text>
+  </view>
+  
+<view class="SevenEightNine">
+  <text id="7">7</text>
+  <text id="8">8</text>
+  <text id="9">9</text>
+<text id="-">－</text>
+</view>
+<view class="SevenEightNine">
+<text id="4">4</text>
+<text id="5">5</text>
+<text id="6">6</text>
+<text id="+">+</text>
+</view>
+<view class="SevenEightNine">
+<text id="1">1</text>
+<text id="2">2</text>
+<text id="3">3</text>
+<text id="del">{{lt}}</text>
+</view>
+<view class="SevenEightNine">
+<text id=".">.</text>
+<text id="0">0</text>
+<text id="clear">Ac</text>
+</view>
+<view class="SevenEightNine">
+<text id="(">(</text>
+<text id=")">)</text>
+</view>
+</view>
+<!--dec-->
+<view style="{{decStyle}}">
+<view class="SevenEightNine">
+  <text id="7">7</text>
+  <text id="8">8</text>
+  <text id="9">9</text>
+  <text id="÷">÷</text>
+</view>
+<view class="SevenEightNine">
+<text id="4">4</text>
+<text id="5">5</text>
+<text id="6">6</text>
+<text id="×">×</text>
+</view>
+<view class="SevenEightNine">
+<text id="1">1</text>
+<text id="2">2</text>
+<text id="3">3</text>
+<text id="-">－</text>
+</view>
+<view class="SevenEightNine">
+<text id=".">.</text>
+<text id="0">0</text>
+<text id="^">^</text>
+<text id="+">+</text>
+</view>
+<view class="SevenEightNine">
+<text id="(">(</text>
+<text id=")">)</text>
+<text id="del">{{lt}}</text>
+<text id="clear">Ac</text>
+</view>
+<view class="SevenEightNine">
+<text id="e">e</text>
+<text id="%">%</text>
+<text id="π">π</text>
+</view>
+</view>
+<!--dec end-->
+</view>
+
+

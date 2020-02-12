@@ -1,0 +1,39 @@
+page{
+  width: 100%;
+  margin: 0 auto;
+}
+.clickTab{
+  background-color:aquamarine
+}
+.showArea{
+  height: 150px;
+  font-size: 20px;
+}
+.tips{
+font-size:15px;
+color:blueviolet;
+}
+.totalInput{
+  background-color:snow;
+  height: 40px;
+}
+.number{
+  
+  width:100%;
+  margin: 0 auto;
+  color:white;
+  background-color:grey;
+}
+.number .SevenEightNine text{
+  /*好吧，就用table-cell挺好使用的*/
+  display: table-cell;
+ font-size: 23px;
+ text-align: center;
+ border-right: 1px grey solid;
+ border-bottom: 1px grey solid;
+ vertical-align: middle;
+ /*总宽度为20rem*/
+ /**750rpx*/
+ width:187.5rpx;
+ height: 40px;
+}
