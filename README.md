@@ -7,9 +7,8 @@
 看到多人协作这里了
 * [VS code切换语言](https://code.visualstudio.com/docs/getstarted/locales)
 ### 常用工具类软件
-* [流程图-在线绘制](https://www.draw.io/)
+* [流程图-在线绘制](https://www.draw.io/) 流程图源文件存储于draw.io目录中
 * [在线音频转化](https://zhuanhuan.supfree.net/)
-* [谷歌应用商店镜像网站](https://www.gugeapps.com/webstore/category/extensions)
 
 ### 一些学习的课程网站
 * [数据库系统概念第六版官方网站](https://www.db-book.com/db6/)
